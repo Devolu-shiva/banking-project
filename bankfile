@@ -1,0 +1,27 @@
+pipeline {
+  agent any
+    tools{
+      maven 'M2_HOME'
+          }
+   stages {
+    stage('Git checkout') {
+      steps {
+         echo 'This is for cloning the gitrepo'
+          checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Devolu-shiva/banking-project.git']])
+        
+                          }
+            }
+    stage('Create a Package') {
+      steps {
+         echo 'This will create a package using maven'
+         sh 'mvn package'
+                             }
+            }
+
+   
+  
+   
+    
+
+    }
+}
