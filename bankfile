@@ -33,7 +33,7 @@ pipeline {
 
         stage('Login to Dockerhub') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'shiva-webhook', passwordVariable: 'passdockerpush', usernameVariable: 'userdockerpush')]) {
+        withCredentials([usernamePassword(credentialsId: 'd-l', passwordVariable: 'passbank', usernameVariable: 'userbank')]) {
     // some block
 }
                                                                     }
