@@ -23,7 +23,13 @@ pipeline {
             }
    
   }
-   
+
+       stage('Create a Docker image from the Package Insure-Me.jar file') {
+      steps {
+        sh 'docker build -t devshivadevops96/bankingservice:1.0 .'
+                    }
+            }
+  
     
 
     }
