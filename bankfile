@@ -30,6 +30,20 @@ pipeline {
         sh 'docker build -t devshivadevops96/bankingservice:1.0 .'
                     }
             }
+
+        stage('Login to Dockerhub') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'shiva-webhook', passwordVariable: 'passbankwebhook', usernameVariable: 'userbankwebhook')]) {
+    // some block
+}
+                                                                    }
+                                }
+
+       stage('Push the Docker image') {
+      steps {
+        sh 'docker push devshivadevops96/bankingservice:1.0'
+                                }
+            }
   
     
 
