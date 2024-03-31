@@ -24,7 +24,7 @@ pipeline {
    
   }
 
-       stage('Create a Docker image from the Package Insure-Me.jar file') {
+       stage('Create a Docker image from the Package Insure-Me.jar file restart docker and jenkins') {
       steps {
        echo 'this step to create a docker image of our running application in our remode docker '
         sh 'docker build -t devshivadevops96/bankingservice:1.0 .'
