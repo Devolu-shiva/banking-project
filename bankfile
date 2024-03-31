@@ -33,8 +33,8 @@ pipeline {
 
         stage('Login to Dockerhub') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'd-l', passwordVariable: 'passbank', usernameVariable: 'userbank')]) {
-    sh 'docker login -u ${userdockerpush} -p ${passdockerpush}'
+       withCredentials([usernamePassword(credentialsId: 'shiva-docker-login', passwordVariable: 'passbank', usernameVariable: 'userbank')]) {
+    sh 'docker login -u ${userbank} -p ${passbank}'
 }
                                                                     }
                                 }
