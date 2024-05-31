@@ -36,7 +36,7 @@ pipeline {
         //        sh "docker tag dprasaddevops/bankapp-eta-app:${BUILD_NUMBER} dprasaddevops/bankapp-eta-app:latest"
            }
         }
-      stage('Login2DockerHub and Push the Image') {
+//      stage('Login2DockerHub and Push the Image') {
 //    steps {
   //      script {
     //        // Retrieve Docker Hub credentials from Jenkins credentials
