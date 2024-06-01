@@ -26,7 +26,15 @@ pipeline {
                 
                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/bankitt/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             }
-		}   
+		}
+
+	      stage('Create a Docker image from the Package bankingapp.jar file restart docker and jenkins') {
+      steps {
+       echo 'this step to create a docker image of our running application in our remode docker '
+        sh 'docker build -t devshivadevops96/bankhub:1.0 .'
+                    }
+            }
+
 	 
 
     }
