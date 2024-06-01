@@ -20,6 +20,13 @@ pipeline {
                 sh "mvn package"
             }
 		}
+
+	         stage('html publisher') {
+            steps {
+                
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/target/bankitt/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+            }
+		}   
 	 
 
     }
